@@ -97,7 +97,22 @@ void DisplayMenu()
 
 void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
 {
-    throw new NotImplementedException();
+    if (products.Count == 0)
+    {
+        Console.WriteLine("No products available.");
+        return;
+    }
+
+    Console.WriteLine("Available Products:");
+    foreach (var product in products)
+    {
+
+        var productType = productTypes.FirstOrDefault(pt => pt.Id == product.ProductTypeId);
+        string productTypeName = productType != null ? productType.Title : "Unknown Type";
+
+
+        Console.WriteLine($"Name: {product.Name}, Price: {product.Price:C}, Type: {productTypeName}");
+    }
 }
 
 void DeleteProduct(List<Product> products, List<ProductType> productTypes)
