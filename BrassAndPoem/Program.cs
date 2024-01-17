@@ -95,12 +95,6 @@ void DisplayMenu()
     Console.Write("Enter your choice: ");
 }
 
-
-void DisplayMenu()
-{
-    throw new NotImplementedException();
-}
-
 void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
 {
     throw new NotImplementedException();
